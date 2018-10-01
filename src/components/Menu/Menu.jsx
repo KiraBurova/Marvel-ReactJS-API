@@ -2,8 +2,6 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import {SearchInput} from '../UI/SearchInput/SearchInput';
-
 import './Menu.css';
 
 export const Menu = () => (
