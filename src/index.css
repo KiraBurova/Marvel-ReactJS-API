@@ -4,9 +4,9 @@ html, body {
   padding: 0;
   height: 100%;
   line-height: 1.5;
-  font-family: 'sans-serif';
+  font-family: 'Roboto', 'sans-serif';
 }
-div, span, object, iframe, img, table, caption, thead, tbody,
+/* div, span, object, iframe, img, table, caption, thead, tbody,
 tfoot, tr, tr, td, article, aside, canvas, details, figure, hgroup, menu,
 nav, footer, header, section, summary, mark, audio, video {
   border: 0;
@@ -35,4 +35,4 @@ border: 0;
 }
 :focus {
 outline: 0;
-}
+} */

@@ -7,8 +7,7 @@ import {SearchInput} from '../UI/SearchInput/SearchInput';
 import './Menu.css';
 
 export const Menu = () => (
-    <nav className="menu">
-    <SearchInput/>  
+    <nav className="menu white">
         <ul className="menu__list">
             <li className="menu__item">
                 <Link to="/characters" className="menu__link">Characters</Link>
