@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Router } from 'react-router';
-import { Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { ScreensMain } from './Main/Main';
 import { ScreensCharactersList } from './Characters/List/List';
+import {Footer} from '../components/UI/Footer/Footer'
 
 import store from '../redux/store/store';
 
@@ -19,6 +19,7 @@ export const ScreensRoot = () => (
       <Route path="/events" component={ScreensMain} />
       <Route path="/series" component={ScreensMain} />
       <Route path="/stories" component={ScreensMain} />
+      <Footer></Footer>
     </div>
   </Provider>
 );
