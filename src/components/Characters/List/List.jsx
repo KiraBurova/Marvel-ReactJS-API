@@ -1,9 +1,21 @@
 import React, {Component} from 'react';
 
-export class CharactersList extends Component {
+import { connect } from 'react-redux';
+import { fetchData } from '../../../redux/actions/dataActions';
+
+class CharactersList extends Component {
+    componentDidMount() {
+        this.props.fetchData('characters')
+    }
     render() {
         return (
-            <div></div>
+            <div>ddd</div>
         )
     }
 }
+
+const mapStateToProps = state => ({
+    characters: state.data.data
+});
+
+export default connect(mapStateToProps, { fetchData })(CharactersList);
