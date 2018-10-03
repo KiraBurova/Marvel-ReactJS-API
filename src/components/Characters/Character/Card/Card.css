@@ -1,7 +1,4 @@
-.card {
-    display: flex;
-}
-
-.card-title {
-    bottom: auto;
+.card-main {
+    padding: 10px;
+    text-align: center;
 }

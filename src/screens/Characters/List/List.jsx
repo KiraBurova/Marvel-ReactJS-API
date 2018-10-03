@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import CharactersList from '../../../components/Characters/List/List';
 
 export class ScreensCharactersList extends Component {
@@ -8,6 +8,6 @@ export class ScreensCharactersList extends Component {
                 <h1>Characters</h1>
                 <CharactersList />
             </div>
-        )
+        );
     }
 }

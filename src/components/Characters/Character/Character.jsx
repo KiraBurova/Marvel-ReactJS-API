@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { fetchSingleItem } from '../../../redux/actions/dataActions';
@@ -19,6 +20,12 @@ class Character extends Component {
         );
     }
 }
+
+Character.propTypes = {
+    fetchSingleItem: PropTypes.func.isRequired,
+    character: PropTypes.object.isRequired,
+    url: PropTypes.string.isRequired
+};
 
 const mapStateToProps = state => ({
     character: state.data.item

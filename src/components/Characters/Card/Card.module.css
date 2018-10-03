@@ -4,7 +4,7 @@
     text-align: left;
 }
 
-.card .card-action {
+.card-action {
     position: absolute;
     right: 0;
     bottom: 0;

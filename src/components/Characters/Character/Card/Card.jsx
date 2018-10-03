@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Card.css';
 
@@ -7,9 +8,11 @@ import { Button } from '../../../UI/Button/Button';
 
 export const Card = ({character}) => (
     <div className="card">
-        <div className="card-image">
-            <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name}></img>
+        <div className="card-main">
             <span className="card-title">{character.name}</span>
+            <div className="card-image">
+                <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name}></img>
+            </div>
         </div>
         <div className="card-content">
             <div className="comics">
@@ -57,3 +60,7 @@ export const Card = ({character}) => (
         </div>
     </div>
 );
+
+Card.propTypes = {
+    character: PropTypes.object.isRequired
+};

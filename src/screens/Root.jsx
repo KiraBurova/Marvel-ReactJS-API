@@ -8,6 +8,7 @@ import { ScreensCharacter } from './Characters/Character/Character';
 import { Footer } from '../components/UI/Footer/Footer';
 
 import store from '../redux/store/store';
+import { ScreensComicsList } from './Comics/List/List';
 
 
 export const ScreensRoot = () => (
@@ -16,7 +17,7 @@ export const ScreensRoot = () => (
             <Route path="/" exact component={ScreensMain} />
             <Route path="/characters" exact component={ScreensCharactersList} />
             <Route path="/characters/:id" exact component={ScreensCharacter} />
-            <Route path="/comics" component={ScreensMain} />
+            <Route path="/comics" component={ScreensComicsList} />
             <Route path="/creators" component={ScreensMain} />
             <Route path="/events" component={ScreensMain} />
             <Route path="/series" component={ScreensMain} />

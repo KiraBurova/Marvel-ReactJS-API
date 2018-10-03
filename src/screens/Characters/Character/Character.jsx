@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Character from '../../../components/Characters/Character/Character';
 
@@ -7,3 +8,7 @@ export const ScreensCharacter = (props) => (
         <Character url={props.match.params.id}/>
     </div>
 );
+
+ScreensCharacter.propTypes = {
+    match: PropTypes.object.isRequired
+};

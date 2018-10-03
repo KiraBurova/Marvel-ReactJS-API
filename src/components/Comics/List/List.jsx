@@ -6,30 +6,31 @@ import { fetchData } from '../../../redux/actions/dataActions';
 
 import {Card} from '../Card/Card';
 
-class CharactersList extends Component {
+class ComicsList extends Component {
     componentDidMount() {
-        this.props.fetchData('characters');
+        this.props.fetchData('comics');
     }
     render() {
-        const characters = this.props.characters;
+        const comics = this.props.comics;
+        console.log(comics);
 
         return (
             <div className="row">
-                <div className="col s12 m6">{characters ? characters.map((character) => {
-                    return <Card character={character} key={character.id}/>;
+                <div className="col s12 m6">{comics ? comics.map((comic) => {
+                    return <Card comic={comic} key={comic.id}/>;
                 }) : <span>Loading data</span>}</div>
             </div>
         );
     }
 }
 
-CharactersList.propTypes = {
+ComicsList.propTypes = {
     fetchData: PropTypes.func.isRequired,
-    characters: PropTypes.array.isRequired
+    comics: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
-    characters: state.data.data
+    comics: state.data.data
 });
 
-export default connect(mapStateToProps, { fetchData })(CharactersList);
+export default connect(mapStateToProps, { fetchData })(ComicsList);

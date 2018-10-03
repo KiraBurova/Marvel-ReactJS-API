@@ -1,20 +1,22 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { Button } from '../../UI/Button/Button';
 
-import './Card.css';
+import styles from './Card.module.css';
 
 export const Card = ({character}) => (
-    <Link to={`characters/${character.id}`}>
-        <div className="card">
-            <div className="card-image">
-                <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name}></img>
-                <span className="card-title">{character.name}</span>
-                <div className="card-action">
-                    <Button></Button>
-                </div>
+    <div className="card">
+        <div className="card-image">
+            <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name}></img>
+            <span className={styles['card-title']}>{character.name}</span>
+            <div className={styles['card-action']}>
+                <Button text={'Learn More'} link ={`characters/${character.id}`}></Button>
             </div>
         </div>
-    </Link>
+    </div>
 );
+
+Card.propTypes = {
+    character: PropTypes.object.isRequired
+};
