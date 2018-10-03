@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "crypto-js": "^3.1.9-1",
+    "eslint-plugin-react": "^7.11.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",

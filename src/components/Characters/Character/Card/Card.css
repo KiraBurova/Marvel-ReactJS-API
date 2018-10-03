@@ -1,0 +1,7 @@
+.card {
+    display: flex;
+}
+
+.card-title {
+    bottom: auto;
+}

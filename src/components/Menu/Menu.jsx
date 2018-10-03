@@ -27,5 +27,4 @@ export const Menu = () => (
             </li>
         </ul>
     </nav>
-  );
-  
+);
