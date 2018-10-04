@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchSingleItem } from '../../../redux/actions/dataActions';
 
-import { Card } from './Card/Card';
+import { DetailedCard } from './Card/Card';
 
 class Character extends Component {
     componentDidMount() {
@@ -12,10 +12,10 @@ class Character extends Component {
     }
     render() {
         const character = this.props.character;
-        console.log(character);
+
         return (
             <div className="row">
-                <div className="col s12 ">{character ? <Card character={character} key={character.id}/> : <span>Loading data</span>}</div>
+                <div className="col s12 ">{character ? <DetailedCard character={character} key={character.id}/> : <span>Loading data</span>}</div>
             </div>
         );
     }

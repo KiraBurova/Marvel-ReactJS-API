@@ -1,48 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Card.css';
+// import './Card.css';
 
-import { Button } from '../../../UI/Button/Button';
+// import { Button } from '../../../UI/Button/Button';
 
 
-export const Card = ({character}) => (
+export const DetailedCard = ({comic}) => (
     <div className="card">
         <div className="card-main">
-            <span className="card-title">{character.name}</span>
+            <span className="card-title">{comic.name}</span>
             <div className="card-image">
-                <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name}></img>
+                <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt={comic.name}></img>
             </div>
+            <p>{comic.description}</p>
+            <span>Format: {comic.format}</span>
+            <br></br>
+            <span>Page count: {comic.pageCount}</span>
+            <br></br>
+            <span>Issue Number: {comic.issueNumber}</span>
         </div>
         <div className="card-content">
             <div className="comics">
                 <ul className="collection with-header">
-                    <li className="collection-header"><h4>Comics</h4></li>
-                    {character.comics.items.map(comic => {
-                        return (<a className="collection-item" key={comic.name} href={comic.resourceURI}>{comic.name}</a>);
+                    <li className="collection-header"><h4>Characters</h4></li>
+                    {comic.characters.items.map(character => {
+                        return (<a className="collection-item" key={character.name} href={character.resourceURI}>{character.name}</a>);
                     })}
                 </ul>
             </div>
             <div className="events">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Events</h4></li>
-                    {character.events.items.map(event => {
+                    {comic.events.items.map(event => {
                         return (<a className="collection-item" key={event.name} href={event.resourceURI}>{event.name}</a>);
                     })}
                 </ul>
             </div>
-            <div className="series">
+            {/* <div className="series">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Series</h4></li>
-                    {character.series.items.map(series => {
+                    {comic.series.items.map(series => {
                         return (<a className="collection-item" key={series.name} href={series.resourceURI}>{series.name}</a>);
                     })}
                 </ul>
-            </div>
+            </div> */}
             <div className="stories">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Stories</h4></li>
-                    {character.stories.items.map(story => {
+                    {comic.stories.items.map(story => {
                         return (
                             <div  key={story.name} >
                                 <a  className="collection-item"href={story.resourceURI}>
@@ -61,6 +67,6 @@ export const Card = ({character}) => (
     </div>
 );
 
-Card.propTypes = {
-    character: PropTypes.object.isRequired
+DetailedCard.propTypes = {
+    comic: PropTypes.object.isRequired
 };

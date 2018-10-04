@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import { Button } from '../../UI/Button/Button';
 
-export const Card = ({comic}) => (
+import './Card.css';
+
+export const ComicsCard = ({comic}) => (
     <div className="card">
         <div className="card-image">
             <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt={comic.title}></img>
@@ -15,6 +17,6 @@ export const Card = ({comic}) => (
     </div>
 );
 
-Card.propTypes = {
+ComicsCard.propTypes = {
     comic: PropTypes.object.isRequired
 };

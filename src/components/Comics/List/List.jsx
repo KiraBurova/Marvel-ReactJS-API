@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchData } from '../../../redux/actions/dataActions';
 
-import {Card} from '../Card/Card';
+import {ComicsCard} from '../Card/Card';
 
 class ComicsList extends Component {
     componentDidMount() {
@@ -17,7 +17,7 @@ class ComicsList extends Component {
         return (
             <div className="row">
                 <div className="col s12 m6">{comics ? comics.map((comic) => {
-                    return <Card comic={comic} key={comic.id}/>;
+                    return <ComicsCard comic={comic} key={comic.id}/>;
                 }) : <span>Loading data</span>}</div>
             </div>
         );

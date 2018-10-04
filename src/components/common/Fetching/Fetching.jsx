@@ -4,32 +4,33 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchData } from '../../../redux/actions/dataActions';
 
-import { CharactersCard }  from '../Card/Card';
+import { CharactersList }  from '../../Characters/List/List';
 
-class CharactersList extends Component {
+class Fetching extends Component {
     componentDidMount() {
         this.props.fetchData('characters');
     }
     render() {
-        const characters = this.props.characters;
+        const data = this.props.data;
 
         return (
             <div className="row">
-                <div className="col s12 m6">{characters ? characters.map((character) => {
+                <CharactersList />
+                {/* <div className="col s12 m6">{characters ? characters.map((character) => {
                     return <CharactersCard character={character} key={character.id}/>;
-                }) : <span>Loading data</span>}</div>
+                }) : <span>Loading data</span>}</div> */}
             </div>
         );
     }
 }
 
-CharactersList.propTypes = {
+Fetching.propTypes = {
     fetchData: PropTypes.func.isRequired,
-    characters: PropTypes.array.isRequired
+    data: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
-    characters: state.data.data
+    data: state.data.data
 });
 
-export default connect(mapStateToProps, { fetchData })(CharactersList);
+export default connect(mapStateToProps, { fetchData })(Fetching);

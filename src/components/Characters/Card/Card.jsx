@@ -5,11 +5,12 @@ import { Button } from '../../UI/Button/Button';
 
 import styles from './Card.module.css';
 
-export const Card = ({character}) => (
+
+export const CharactersCard = ({character}) => (
     <div className="card">
         <div className="card-image">
             <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name}></img>
-            <span className={styles['card-title']}>{character.name}</span>
+            <span className='card-title'>{character.name}</span>
             <div className={styles['card-action']}>
                 <Button text={'Learn More'} link ={`characters/${character.id}`}></Button>
             </div>
@@ -17,6 +18,6 @@ export const Card = ({character}) => (
     </div>
 );
 
-Card.propTypes = {
+CharactersCard.propTypes = {
     character: PropTypes.object.isRequired
 };

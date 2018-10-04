@@ -9,6 +9,7 @@ import { Footer } from '../components/UI/Footer/Footer';
 
 import store from '../redux/store/store';
 import { ScreensComicsList } from './Comics/List/List';
+import { ScreensComic } from './Comics/Comic/Comic';
 
 
 export const ScreensRoot = () => (
@@ -17,11 +18,12 @@ export const ScreensRoot = () => (
             <Route path="/" exact component={ScreensMain} />
             <Route path="/characters" exact component={ScreensCharactersList} />
             <Route path="/characters/:id" exact component={ScreensCharacter} />
-            <Route path="/comics" component={ScreensComicsList} />
-            <Route path="/creators" component={ScreensMain} />
-            <Route path="/events" component={ScreensMain} />
-            <Route path="/series" component={ScreensMain} />
-            <Route path="/stories" component={ScreensMain} />
+            <Route path="/comics" exact component={ScreensComicsList} />
+            <Route path="/comics/:id" exact component={ScreensComic} />
+            <Route path="/creators" exact component={ScreensMain} />
+            <Route path="/events" exact component={ScreensMain} />
+            <Route path="/series" exact component={ScreensMain} />
+            <Route path="/stories" exact component={ScreensMain} />
             <Footer></Footer>
         </div>
     </Provider>
