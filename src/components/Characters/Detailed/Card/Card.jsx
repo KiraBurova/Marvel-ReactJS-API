@@ -7,14 +7,12 @@ import { Button } from '../../../UI/Button/Button';
 
 
 export const DetailedCard = ({character}) => (
-    <div className="card">
-        <div className="card-main">
-            <span className="card-title">{character.name}</span>
-            <div className="card-image">
+    <div className="row">
+        <div className="col s12 m6">
+            <h4>{character.name}</h4>
+            <div className="character__image">
                 <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name}></img>
             </div>
-        </div>
-        <div className="card-content">
             {!!character.comics.available && <div className="comics">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Comics</h4></li>
@@ -23,6 +21,15 @@ export const DetailedCard = ({character}) => (
                     })}
                 </ul>
             </div>}
+            {!!character.urls && !!character.urls.length && <div>
+                <div className="character__actions">
+                    {character.urls.map(url => {
+                        return <Button text={url.type} link={url.url} key={url.url}></Button>;
+                    })}
+                </div>
+            </div>}
+        </div>
+        <div className="col s12 m6">
             {!!character.events.available && <div className="events">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Events</h4></li>
@@ -55,13 +62,6 @@ export const DetailedCard = ({character}) => (
                 </ul>
             </div>}
         </div>
-        {!!character.urls && !!character.urls.length && <div className="card-action">
-            <div className="character__actions">
-                {character.urls.map(url => {
-                    return <Button text={url.type} link={url.url} key={url.url}></Button>;
-                })}
-            </div>
-        </div>}
     </div>
 );
 

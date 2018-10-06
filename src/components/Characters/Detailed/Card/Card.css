@@ -3,6 +3,19 @@
     text-align: center;
 }
 
-.character__actions {
-    
+.character__image {
+    width: 300px;
+    height: 300px;
+}
+
+.character__image img {
+    width: 100%;
+}
+
+.character__actions a {
+    margin-right: 10px;
+}
+
+.character__actions a:last-of-type {
+    margin-right: 0;
 }
