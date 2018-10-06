@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import ComicsList from '../../../components/Comics/List/List';
+import { Navbar } from '../../../components/UI/Navbar/Navbar';
 
 export class ScreensComicsList extends Component {
     render() {
         return (
             <div>
-                <h1 className="center-align">Comics</h1>
+                <Navbar text={'Comics'}/>
                 <ComicsList />
             </div>
         );
