@@ -5,7 +5,7 @@ export class ScreensCharactersList extends Component {
     render() {
         return (
             <div>
-                <h1>Characters</h1>
+                <h1 className="center-align">Characters</h1>
                 <CharactersList />
             </div>
         );

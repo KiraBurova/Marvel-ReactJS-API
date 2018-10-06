@@ -1,48 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Card.css';
+// import './Card.css';
 
 import { Button } from '../../../UI/Button/Button';
 
 
-export const DetailedCard = ({character}) => (
+export const DetailedCard = ({event}) => (
     <div className="card">
         <div className="card-main">
-            <span className="card-title">{character.name}</span>
+            <span className="card-title">{event.title}</span>
             <div className="card-image">
-                <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name}></img>
+                <img src={`${event.thumbnail.path}.${event.thumbnail.extension}`} alt={event.title}></img>
             </div>
         </div>
         <div className="card-content">
-            {!!character.comics.available && <div className="comics">
+            {!!event.comics.available && <div className="comics">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Comics</h4></li>
-                    {character.comics.items.map(comic => {
+                    {event.comics.items.map(comic => {
                         return (<a className="collection-item" key={comic.name} href={comic.resourceURI}>{comic.name}</a>);
                     })}
                 </ul>
             </div>}
-            {!!character.events.available && <div className="events">
+            {!!event.creators.available && <div className="creators">
                 <ul className="collection with-header">
-                    <li className="collection-header"><h4>Events</h4></li>
-                    {character.events.items.map(event => {
-                        return (<a className="collection-item" key={event.name} href={event.resourceURI}>{event.name}</a>);
+                    <li className="collection-header"><h4>Creators</h4></li>
+                    {event.creators.items.map(creator => {
+                        return (<a className="collection-item" key={creator.name} href={creator.resourceURI}>{creator.name} ({creator.role})</a>);
                     })}
                 </ul>
             </div>}
-            {!!character.series.available && <div className="series">
+            {!!event.series.available && <div className="series">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Series</h4></li>
-                    {character.series.items.map(series => {
+                    {event.series.items.map(series => {
                         return (<a className="collection-item" key={series.name} href={series.resourceURI}>{series.name}</a>);
                     })}
                 </ul>
             </div>}
-            {!!character.stories.available && <div className="stories">
+            {!!event.stories.available && <div className="stories">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Stories</h4></li>
-                    {character.stories.items.map(story => {
+                    {event.stories.items.map(story => {
                         return (
                             <div  key={story.name + story.type} >
                                 <a  className="collection-item"href={story.resourceURI}>
@@ -55,9 +55,9 @@ export const DetailedCard = ({character}) => (
                 </ul>
             </div>}
         </div>
-        {!!character.urls && !!character.urls.length && <div className="card-action">
-            <div className="character__actions">
-                {character.urls.map(url => {
+        {!!event.urls && !!event.urls.length && <div className="card-action">
+            <div className="event__actions">
+                {event.urls.map(url => {
                     return <Button text={url.type} link={url.url} key={url.url}></Button>;
                 })}
             </div>
@@ -66,5 +66,5 @@ export const DetailedCard = ({character}) => (
 );
 
 DetailedCard.propTypes = {
-    character: PropTypes.object.isRequired
+    event: PropTypes.object.isRequired
 };

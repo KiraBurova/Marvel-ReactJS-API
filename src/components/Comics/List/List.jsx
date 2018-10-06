@@ -12,14 +12,11 @@ class ComicsList extends Component {
     }
     render() {
         const comics = this.props.comics;
-        console.log(comics);
 
         return (
-            <div className="row">
-                <div className="col s12 m6">{comics ? comics.map((comic) => {
-                    return <ComicsCard comic={comic} key={comic.id}/>;
-                }) : <span>Loading data</span>}</div>
-            </div>
+            <div className="row">{comics ? comics.map((comic) => {
+                return <ComicsCard comic={comic} key={comic.id}/>;
+            }) : <span>Loading data</span>}</div>
         );
     }
 }

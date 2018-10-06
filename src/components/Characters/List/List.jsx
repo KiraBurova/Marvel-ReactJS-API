@@ -14,11 +14,9 @@ class CharactersList extends Component {
         const characters = this.props.characters;
 
         return (
-            <div className="row">
-                <div className="col s12 m6">{characters ? characters.map((character) => {
-                    return <CharactersCard character={character} key={character.id}/>;
-                }) : <span>Loading data</span>}</div>
-            </div>
+            <div  className="row">{characters ? characters.map((character) => {
+                return <CharactersCard character={character} key={character.id}/>;
+            }) : <span>Loading data</span>}</div>
         );
     }
 }
