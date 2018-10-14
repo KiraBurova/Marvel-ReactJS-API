@@ -1,4 +1,4 @@
-import { FETCH_DATA_ACTION, FETCH_SINGLE_ITEM_ACTION } from '../actions/types';
+import { FETCH_DATA_ACTION, FETCH_SINGLE_ITEM_ACTION, FETCH_SEARCHED_DATA_ACTION } from '../actions/types';
 
 const initialState = {
     data: [],
@@ -10,12 +10,17 @@ export default function (state = initialState, action) {
         case FETCH_DATA_ACTION:
             return {
                 ...state,
-                data: state.data.concat(action.data)
+                data: action.data
             }
-            case FETCH_SINGLE_ITEM_ACTION:
+        case FETCH_SINGLE_ITEM_ACTION:
             return {
                 ...state,
                 item: action.data
+            }
+        case FETCH_SEARCHED_DATA_ACTION:
+            return {
+                ...state,
+                data: state.data.filter((item) => item.id === action.data.id)
             }
         default:
             return state;

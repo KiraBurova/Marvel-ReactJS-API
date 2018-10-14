@@ -5,7 +5,6 @@ import { Button } from '../../UI/Button/Button';
 
 import styles from './Card.module.css';
 
-
 export const CharactersCard = ({character}) => (
     <div className="card col s12 m6 l3">
         <div className="card-image">

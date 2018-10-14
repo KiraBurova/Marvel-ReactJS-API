@@ -1,4 +1,4 @@
-import { FETCH_DATA_ACTION, FETCH_SINGLE_ITEM_ACTION } from './types';
+import { FETCH_DATA_ACTION, FETCH_SINGLE_ITEM_ACTION, FETCH_SEARCHED_DATA_ACTION } from './types';
 
 import { API_KEY } from '../../App'
 
@@ -22,6 +22,17 @@ export const fetchSingleItem = (name, id) => async dispatch => {
 
     dispatch({
         type: FETCH_SINGLE_ITEM_ACTION,
+        data: results
+    });
+}
+
+export const fetchSearchedData = (type, name) => async dispatch => {
+    const response = await fetch(`https://gateway.marvel.com/v1/public/${type}?name=${name}&apikey=${API_KEY}&ts=${ts}&hash=${hash}`);
+    const data = await response.json();
+    const results = await data.data.results[0];
+
+    dispatch({
+        type: FETCH_SEARCHED_DATA_ACTION,
         data: results
     });
 }

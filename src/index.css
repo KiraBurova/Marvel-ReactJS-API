@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Title';
+  src: url('./assets/palooka-bb.regular.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
 html, body {
   border: 0;
   margin: 0;
@@ -25,13 +31,3 @@ article, aside, canvas, figure, figure img, figcaption, hgroup,
 footer, header, nav, section, audio, video {
   display: block;
 }
-/* a {
-  text-decoration: none;
-  color: #000000;
-}
-a img {
-border: 0;
-}
-:focus {
-outline: 0;
-} */
