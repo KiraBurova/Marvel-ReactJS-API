@@ -26,7 +26,7 @@ class CharactersList extends Component {
                 <div  className="row">{characters ? characters.map((character) => {
                     return <CharactersCard character={character} key={character.id}/>;
                 }) : <span>Loading data</span>}</div>
-                {options && <Pagination current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>};
+                <Pagination current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>;
             </div>
         );
     }
