@@ -2,7 +2,8 @@ import { FETCH_DATA_ACTION, FETCH_SINGLE_ITEM_ACTION, FETCH_SEARCHED_DATA_ACTION
 
 const initialState = {
     data: [],
-    item: null
+    item: null,
+    options: {}
 }
 
 export default function (state = initialState, action) {
@@ -10,7 +11,8 @@ export default function (state = initialState, action) {
         case FETCH_DATA_ACTION:
             return {
                 ...state,
-                data: action.data
+                data: action.data,
+                options: action.options
             }
         case FETCH_SINGLE_ITEM_ACTION:
             return {

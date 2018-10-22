@@ -4,14 +4,23 @@ import { API_KEY } from '../../App'
 
 import { hash, ts } from '../../config/config';
 
-export const fetchData = (name) => async dispatch => {
-    const response = await fetch(`https://gateway.marvel.com/v1/public/${name}?apikey=${API_KEY}&ts=${ts}&hash=${hash}`);
+export const fetchData = (name, origOptions) => async dispatch => {
+    const defaultOptions = { page: 0, count: 20 }
+    const options = Object.assign(defaultOptions, origOptions)
+
+    const currentOffset = options.page === undefined ? 0 : (options.count * (options.page - 1));
+
+    const response = await fetch(`https://gateway.marvel.com/v1/public/${name}?apikey=${API_KEY}&ts=${ts}&hash=${hash}&offset=${currentOffset}`);
     const data = await response.json();
     const results = await data.data.results;
+    const totalPages = await data.data.total;
+
+    Object.assign(options, {totalPages})
 
     dispatch({
         type: FETCH_DATA_ACTION,
-        data: results
+        data: results,
+        options
     });
 }
 
