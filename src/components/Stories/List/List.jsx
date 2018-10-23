@@ -25,7 +25,7 @@ class StoriesList extends Component {
                 <div className="row">{stories ? stories.map((story) => {
                     return <StoriesCard story={story} key={story.id}/>;
                 }) : <span>Loading data</span>}</div>
-                <Pagination style={{ margin: '100px' }} current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>;
+                {options.count && <Pagination style={{ margin: '100px' }} current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>};
             </div>
         );
     }

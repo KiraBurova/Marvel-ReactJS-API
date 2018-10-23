@@ -2,3 +2,9 @@
     text-transform: uppercase;
     text-align: center;
 }
+
+.card-title {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: left;
+}

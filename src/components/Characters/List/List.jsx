@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import { fetchData } from '../../../redux/actions/dataActions';
 
 import { CharactersCard }  from '../Card/Card';
-
+import { Loader } from '../../UI/Loader/Loader.jsx';
+ 
 import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
 
@@ -15,18 +16,18 @@ class CharactersList extends Component {
         this.fetchData();
     }
     fetchData(page) {
-        this.props.fetchData('characters', {page});
+        this.props.fetchData('characters', { page });
         window.scrollTo(0, 0);
     }
     render() {
-        const {characters, options} = this.props;
+        const { characters, options } = this.props;
 
         return (
             <div>
-                <div  className="row">{characters ? characters.map((character) => {
+                <div className="row">{characters ? characters.map((character) => {
                     return <CharactersCard character={character} key={character.id}/>;
-                }) : <span>Loading data</span>}</div>
-                <Pagination current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>;
+                }) : <Loader />}</div>
+                {options.count && <Pagination current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>};
             </div>
         );
     }

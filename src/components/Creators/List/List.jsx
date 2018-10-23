@@ -25,7 +25,7 @@ class CreatorsList extends Component {
             <div className="row">{creators ? creators.map((creator) => {
                 return <CreatorsCard creator={creator} key={creator.id}/>;
             }) : <span>Loading data</span>}</div>
-                <Pagination current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>;
+                {options.count && <Pagination current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>};
             </div>
         );
     }

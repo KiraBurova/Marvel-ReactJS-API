@@ -25,7 +25,7 @@ class EventsList extends Component {
                 <div className="row">{events ? events.map((event) => {
                     return <EventsCard event={event} key={event.id}/>;
                 }) : <span>Loading data</span>}</div>
-                <Pagination current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>;
+                {options.count && <Pagination current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>};
             </div>
         );
     }

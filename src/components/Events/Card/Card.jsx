@@ -7,10 +7,12 @@ import { Button } from '../../UI/Button/Button';
 
 
 export const EventsCard = ({event}) => (
-    <div className="card col s12 m6 l3">
+    <div className="col s12 m6 l3">
+    <div className="card">
         <div className="card-image">
             <img src={`${event.thumbnail.path}/landscape_incredible.${event.thumbnail.extension}`} alt={event.title}></img>
             <span className='card-title truncate'>{event.title}</span>
+            </div>
             <div className='card-action'>
                 <Button text={'Learn More'} link ={`events/${event.id}`}></Button>
             </div>

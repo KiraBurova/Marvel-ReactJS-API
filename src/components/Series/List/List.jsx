@@ -25,7 +25,7 @@ class SeriesList extends Component {
                 <div className="row">{series ? series.map((series) => {
                     return <SeriesCard series={series} key={series.id}/>;
                 }) : <span>Loading data</span>}</div>
-                <Pagination current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>;
+                {options.count && <Pagination current={options.page || 1} total={options.totalPages} pageSize={options.count} onChange={(page) => this.fetchData(page)}/>};
             </div>
         );
     }

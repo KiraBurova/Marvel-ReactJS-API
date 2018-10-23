@@ -24,7 +24,7 @@ export const DetailedCard = ({character}) => (
             {!!character.urls && !!character.urls.length && <div>
                 <div className="character__actions">
                     {character.urls.map(url => {
-                        return <Button text={url.type} link={url.url} key={url.url}></Button>;
+                        return <Button text={url.type} link={url.url} key={url.url} external={true}></Button>;
                     })}
                 </div>
             </div>}

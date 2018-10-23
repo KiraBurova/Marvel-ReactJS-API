@@ -7,12 +7,14 @@ import { Button } from '../../UI/Button/Button';
 
 
 export const StoriesCard = ({story}) => (
-    <div className="card col s12 m6 l3">
+    <div className="col s12 m6 l3">
+    <div className="card">
         <div className="card-content">
             <p>{story.title}</p>
         </div>
         <div className="card-action">
             <Button text={'Learn More'} link ={`stories/${story.id}`}></Button>
+        </div>
         </div>
     </div>
 );
