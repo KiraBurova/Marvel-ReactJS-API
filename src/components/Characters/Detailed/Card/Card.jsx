@@ -6,7 +6,7 @@ import './Card.css';
 import { Button } from '../../../UI/Button/Button';
 
 
-export const DetailedCard = ({character}) => (
+export const DetailedCard = ({character, onGetData}) => (
     <div className="row">
         <div className="col s12 m6">
             <h4>{character.name}</h4>
@@ -17,7 +17,7 @@ export const DetailedCard = ({character}) => (
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Comics</h4></li>
                     {character.comics.items.map(comic => {
-                        return (<a className="collection-item" key={comic.name} href={comic.resourceURI}>{comic.name}</a>);
+                        return (<a onClick={() => onGetData(comic.resourceURI, 'comics')} className="collection-item" key={comic.name}>{comic.name}</a>);
                     })}
                 </ul>
             </div>}
