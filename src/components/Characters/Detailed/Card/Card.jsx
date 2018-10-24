@@ -17,7 +17,7 @@ export const DetailedCard = ({character, onGetData}) => (
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Comics</h4></li>
                     {character.comics.items.map(comic => {
-                        return (<a onClick={() => onGetData(comic.resourceURI, 'comics')} className="collection-item" key={comic.name}>{comic.name}</a>);
+                        return (<a href='#' onClick={(e) => onGetData(comic.resourceURI, 'comics', e)} className="collection-item" key={comic.name}>{comic.name}</a>);
                     })}
                 </ul>
             </div>}
@@ -66,5 +66,6 @@ export const DetailedCard = ({character, onGetData}) => (
 );
 
 DetailedCard.propTypes = {
-    character: PropTypes.object.isRequired
+    character: PropTypes.object.isRequired,
+    onGetData: PropTypes.func.isRequired
 };

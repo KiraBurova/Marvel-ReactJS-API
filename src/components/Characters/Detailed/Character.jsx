@@ -5,26 +5,38 @@ import { connect } from 'react-redux';
 import { fetchSingleItem, fetchAdditionalData } from '../../../redux/actions/dataActions';
 
 import { DetailedCard } from './Card/Card';
-import { Popup } from '../../UI/Popup/Popup'
+import { Popup } from '../../UI/Popup/Popup';
 
 class Character extends Component {
+    state = {
+        popupOpen: false
+    }
     componentDidMount() {
         this.props.fetchSingleItem('characters', +this.props.url);
     }
-    onGetData(url, type) {
+    onGetData(url, type, e) {
+        e.preventDefault();
         const myRegexp = new RegExp(`${type}/(.*)`);
         const match = myRegexp.exec(url)[1];
         this.props.fetchAdditionalData(type, match);
+
+        this.setState({
+            popupOpen: true
+        })
+    }
+    onClosePopup = () => {
+        this.setState({
+            popupOpen: false
+        })
     }
     render() {
         const character = this.props.character;
         const additional = this.props.additional;
-        console.log(additional)
 
         return (
             <div className="row">
-                <div className="col s12">{character ? <DetailedCard character={character} key={character.id} onGetData={(url, type) => this.onGetData(url, type)}/> : <span>Loading data</span>}</div>
-                <div>{additional && <Popup info={additional}/>}</div>
+                <div className="col s12">{character ? <DetailedCard character={character} key={character.id} onGetData={(url, type, e) => this.onGetData(url, type, e)}/> : <span>Loading data</span>}</div>
+                <div>{additional && this.state.popupOpen && <Popup info={additional} onClosePopup={this.onClosePopup}/>}</div>
             </div>
         );
     }
@@ -33,7 +45,7 @@ class Character extends Component {
 Character.propTypes = {
     fetchSingleItem: PropTypes.func.isRequired,
     fetchAdditionalData: PropTypes.func.isRequired,
-    character: PropTypes.object.isRequired,
+    character: PropTypes.object,
     url: PropTypes.string.isRequired
 };
 

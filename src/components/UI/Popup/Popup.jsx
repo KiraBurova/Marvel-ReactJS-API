@@ -1,13 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Popup.css';
 
-export const Popup = ({info}) => (
+export const Popup = ({info, onClosePopup}) => (
     <div>
-        {console.log(info)}
-        <div className="overlay"></div>
+        <div className="overlay" onClick={onClosePopup}></div>
         <div className="popup">
-            <i className="material-icons">close</i>
             <div className="card">
                 <div className="card-image">
                     <img src={`${info.thumbnail.path}.${info.thumbnail.extension}`} alt={info.title}></img>
@@ -20,3 +19,8 @@ export const Popup = ({info}) => (
         </div>
     </div>
 );
+
+Popup.propTypes = {
+    info: PropTypes.object.isRequired,
+    onClosePopup: PropTypes.func.isRequired
+};
