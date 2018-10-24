@@ -1,7 +1,7 @@
 {
-  "main.css": "/Marvel-ReactJS-API/static/css/main.8e6c4147.chunk.css",
-  "main.js": "/Marvel-ReactJS-API/static/js/main.857f9e49.chunk.js",
-  "main.js.map": "/Marvel-ReactJS-API/static/js/main.857f9e49.chunk.js.map",
+  "main.css": "/Marvel-ReactJS-API/static/css/main.77fc0b5e.chunk.css",
+  "main.js": "/Marvel-ReactJS-API/static/js/main.b5ec9214.chunk.js",
+  "main.js.map": "/Marvel-ReactJS-API/static/js/main.b5ec9214.chunk.js.map",
   "static/css/1.d3724a49.chunk.css": "/Marvel-ReactJS-API/static/css/1.d3724a49.chunk.css",
   "static/js/1.a15b8bb8.chunk.js": "/Marvel-ReactJS-API/static/js/1.a15b8bb8.chunk.js",
   "static/js/1.a15b8bb8.chunk.js.map": "/Marvel-ReactJS-API/static/js/1.a15b8bb8.chunk.js.map",
@@ -9,8 +9,8 @@
   "runtime~main.js.map": "/Marvel-ReactJS-API/static/js/runtime~main.724ecaa8.js.map",
   "static/css/1.d3724a49.chunk.css.map": "/Marvel-ReactJS-API/static/css/1.d3724a49.chunk.css.map",
   "static/media/index.css": "/Marvel-ReactJS-API/static/media/palooka-bb.regular.b1c82c90.ttf",
-  "static/css/main.8e6c4147.chunk.css.map": "/Marvel-ReactJS-API/static/css/main.8e6c4147.chunk.css.map",
+  "static/css/main.77fc0b5e.chunk.css.map": "/Marvel-ReactJS-API/static/css/main.77fc0b5e.chunk.css.map",
   "index.html": "/Marvel-ReactJS-API/index.html",
-  "precache-manifest.1e32411466073582aab2d4d0ec016ea5.js": "/Marvel-ReactJS-API/precache-manifest.1e32411466073582aab2d4d0ec016ea5.js",
+  "precache-manifest.04ad15d1895acd7741d038dedae5c619.js": "/Marvel-ReactJS-API/precache-manifest.04ad15d1895acd7741d038dedae5c619.js",
   "service-worker.js": "/Marvel-ReactJS-API/service-worker.js"
 }
