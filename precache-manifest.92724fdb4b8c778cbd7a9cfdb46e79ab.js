@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/Marvel-ReactJS-API/static/js/runtime~main.724ecaa8.js"
   },
   {
-    "revision": "67a80e7b5fb8e403d985",
-    "url": "/Marvel-ReactJS-API/static/js/main.67a80e7b.chunk.js"
+    "revision": "89355f8eec35ef4fd354",
+    "url": "/Marvel-ReactJS-API/static/js/main.89355f8e.chunk.js"
   },
   {
     "revision": "61a9ad9ba3c902a5f235",
     "url": "/Marvel-ReactJS-API/static/js/1.61a9ad9b.chunk.js"
   },
   {
-    "revision": "67a80e7b5fb8e403d985",
+    "revision": "89355f8eec35ef4fd354",
     "url": "/Marvel-ReactJS-API/static/css/main.0369f4e4.chunk.css"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/Marvel-ReactJS-API/static/css/1.98f8e306.chunk.css"
   },
   {
-    "revision": "e2e8c3d5a6bc4083e348f7f511b0e2ff",
+    "revision": "189ad779560d06975c8116b4e007ffc8",
     "url": "/Marvel-ReactJS-API/index.html"
   }
 ];
