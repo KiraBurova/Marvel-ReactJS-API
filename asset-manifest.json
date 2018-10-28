@@ -1,7 +1,7 @@
 {
   "main.css": "/Marvel-ReactJS-API/static/css/main.0369f4e4.chunk.css",
-  "main.js": "/Marvel-ReactJS-API/static/js/main.e8eba3ae.chunk.js",
-  "main.js.map": "/Marvel-ReactJS-API/static/js/main.e8eba3ae.chunk.js.map",
+  "main.js": "/Marvel-ReactJS-API/static/js/main.9431826c.chunk.js",
+  "main.js.map": "/Marvel-ReactJS-API/static/js/main.9431826c.chunk.js.map",
   "static/css/1.98f8e306.chunk.css": "/Marvel-ReactJS-API/static/css/1.98f8e306.chunk.css",
   "static/js/1.61a9ad9b.chunk.js": "/Marvel-ReactJS-API/static/js/1.61a9ad9b.chunk.js",
   "static/js/1.61a9ad9b.chunk.js.map": "/Marvel-ReactJS-API/static/js/1.61a9ad9b.chunk.js.map",
@@ -11,6 +11,6 @@
   "static/media/index.css": "/Marvel-ReactJS-API/static/media/palooka-bb.regular.b1c82c90.ttf",
   "static/css/main.0369f4e4.chunk.css.map": "/Marvel-ReactJS-API/static/css/main.0369f4e4.chunk.css.map",
   "index.html": "/Marvel-ReactJS-API/index.html",
-  "precache-manifest.f99a9ef3c5dd47b26f98e90cccc0671d.js": "/Marvel-ReactJS-API/precache-manifest.f99a9ef3c5dd47b26f98e90cccc0671d.js",
+  "precache-manifest.c74ea3d11e27f8344420626a16ed3a5c.js": "/Marvel-ReactJS-API/precache-manifest.c74ea3d11e27f8344420626a16ed3a5c.js",
   "service-worker.js": "/Marvel-ReactJS-API/service-worker.js"
 }
