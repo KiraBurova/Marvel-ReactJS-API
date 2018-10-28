@@ -6,20 +6,26 @@ import PropTypes from 'prop-types';
 import { Button } from '../../../UI/Button/Button';
 
 
-export const DetailedCard = ({event}) => (
-    <div className="card">
-        <div className="card-main">
-            <span className="card-title">{event.title}</span>
-            <div className="card-image">
+export const DetailedCard = ({event, onGetData}) => (
+    <div className="row">
+        <div className="col s12 m6">
+            <h4>{event.title}</h4>
+            <div>
                 <img src={`${event.thumbnail.path}.${event.thumbnail.extension}`} alt={event.title}></img>
             </div>
+            {!!event.urls && !!event.urls.length
+            && <div className="event__actions">
+                {event.urls.map(url => {
+                    return <Button text={url.type} link={url.url} key={url.url} external={true}></Button>;
+                })}
+            </div>}
         </div>
-        <div className="card-content">
+        <div className="col s12 m6">
             {!!event.comics.available && <div className="comics">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Comics</h4></li>
                     {event.comics.items.map(comic => {
-                        return (<a className="collection-item" key={comic.name} href={comic.resourceURI}>{comic.name}</a>);
+                        return (<a href="!#" onClick={(e) => onGetData(comic.resourceURI, 'comics', e)} className="collection-item" key={comic.name}>{comic.name}</a>);
                     })}
                 </ul>
             </div>}
@@ -27,7 +33,7 @@ export const DetailedCard = ({event}) => (
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Creators</h4></li>
                     {event.creators.items.map(creator => {
-                        return (<a className="collection-item" key={creator.name} href={creator.resourceURI}>{creator.name} ({creator.role})</a>);
+                        return (<a href="!#" onClick={(e) => onGetData(creator.resourceURI, 'creators', e)} className="collection-item" key={creator.name}>{creator.name} ({creator.role})</a>);
                     })}
                 </ul>
             </div>}
@@ -35,7 +41,7 @@ export const DetailedCard = ({event}) => (
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Series</h4></li>
                     {event.series.items.map(series => {
-                        return (<a className="collection-item" key={series.name} href={series.resourceURI}>{series.name}</a>);
+                        return (<a href="!#" onClick={(e) => onGetData(series.resourceURI, 'series', e)} className="collection-item" key={series.name}>{series.name}</a>);
                     })}
                 </ul>
             </div>}
@@ -44,27 +50,21 @@ export const DetailedCard = ({event}) => (
                     <li className="collection-header"><h4>Stories</h4></li>
                     {event.stories.items.map(story => {
                         return (
-                            <div  key={story.name + story.type} >
-                                <a  className="collection-item"href={story.resourceURI}>
+                            <div key={story.name + story.type} >
+                                <div className="collection-item">
                                     {story.name}
                                     <span  className="secondary-content">{story.type}</span>
-                                </a>
+                                </div>
                             </div>
                         );
                     })}
                 </ul>
             </div>}
         </div>
-        {!!event.urls && !!event.urls.length && <div className="card-action">
-            <div className="event__actions">
-                {event.urls.map(url => {
-                    return <Button text={url.type} link={url.url} key={url.url}></Button>;
-                })}
-            </div>
-        </div>}
     </div>
 );
 
 DetailedCard.propTypes = {
-    event: PropTypes.object.isRequired
+    event: PropTypes.object.isRequired,
+    onGetData: PropTypes.func.isRequired
 };

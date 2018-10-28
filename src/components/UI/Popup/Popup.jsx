@@ -10,7 +10,7 @@ export const Popup = ({info, onClosePopup}) => (
             <div className="card">
                 <div className="card-image">
                     <img src={`${info.thumbnail.path}.${info.thumbnail.extension}`} alt={info.title}></img>
-                    <span className='card-title'>{info.title}</span>
+                    <span className='card-title'>{info.title || info.fullName || info.name}</span>
                 </div>
                 <div className="card-content">
                     <p>{info.description}</p>

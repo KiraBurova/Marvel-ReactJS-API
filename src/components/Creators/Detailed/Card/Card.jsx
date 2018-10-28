@@ -5,20 +5,26 @@ import PropTypes from 'prop-types';
 
 import { Button } from '../../../UI/Button/Button';
 
-export const DetailedCard = ({creator}) => (
-    <div className="card">
-        <div className="card-main">
-            <span className="card-title">{creator.fullName}</span>
-            <div className="card-image">
+export const DetailedCard = ({creator, onGetData}) => (
+    <div className="row">
+        <div className="col s12 m6">
+            <h4>{creator.fullName}</h4>
+            <div>
                 <img src={`${creator.thumbnail.path}.${creator.thumbnail.extension}`} alt={creator.fullName}></img>
             </div>
+            {!!creator.urls && !!creator.urls.length
+            && <div className="creator__actions">
+                {creator.urls.map(url => {
+                    return <Button text={url.type} link={url.url} key={url.url} external={true}></Button>;
+                })}
+            </div>}
         </div>
-        <div className="card-content">
+        <div className="col s12 m6">
             {!!creator.comics.available && <div className="comics">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Comics</h4></li>
                     {creator.comics.items.map(comic => {
-                        return (<a className="collection-item" key={comic.name} href={comic.resourceURI}>{comic.name}</a>);
+                        return (<a href="!#" onClick={(e) => onGetData(comic.resourceURI, 'comics', e)} className="collection-item" key={comic.name}>{comic.name}</a>);
                     })}
                 </ul>
             </div>}
@@ -26,7 +32,7 @@ export const DetailedCard = ({creator}) => (
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Events</h4></li>
                     {creator.events.items.map(event => {
-                        return (<a className="collection-item" key={event.name} href={event.resourceURI}>{event.name}</a>);
+                        return (<a href="!#" onClick={(e) => onGetData(event.resourceURI, 'events', e)}  className="collection-item" key={event.name}>{event.name}</a>);
                     })}
                 </ul>
             </div>}
@@ -34,7 +40,7 @@ export const DetailedCard = ({creator}) => (
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Series</h4></li>
                     {creator.series.items.map(series => {
-                        return (<a className="collection-item" key={series.name} href={series.resourceURI}>{series.name}</a>);
+                        return (<a href="!#" onClick={(e) => onGetData(series.resourceURI, 'series', e)} className="collection-item" key={series.name}>{series.name}</a>);
                     })}
                 </ul>
             </div>}
@@ -44,26 +50,20 @@ export const DetailedCard = ({creator}) => (
                     {creator.stories.items.map(story => {
                         return (
                             <div  key={story.name} >
-                                <a  className="collection-item"href={story.resourceURI}>
+                                <div className="collection-item">
                                     {story.name}
                                     <span  className="secondary-content">{story.type}</span>
-                                </a>
+                                </div>
                             </div>
                         );
                     })}
                 </ul>
             </div>}
         </div>
-        {!!creator.urls && !!creator.urls.length && <div className="card-action">
-            <div className="creator__actions">
-                {creator.urls.map(url => {
-                    return <Button text={url.type} link={url.url} key={url.url}></Button>;
-                })}
-            </div>
-        </div>}
     </div>
 );
 
 DetailedCard.propTypes = {
-    creator: PropTypes.object.isRequired
+    creator: PropTypes.object.isRequired,
+    onGetData: PropTypes.func.isRequired
 };

@@ -5,7 +5,6 @@ import './Card.css';
 
 import { Button } from '../../../UI/Button/Button';
 
-
 export const DetailedCard = ({character, onGetData}) => (
     <div className="row">
         <div className="col s12 m6">
@@ -17,7 +16,7 @@ export const DetailedCard = ({character, onGetData}) => (
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Comics</h4></li>
                     {character.comics.items.map(comic => {
-                        return (<a href='#' onClick={(e) => onGetData(comic.resourceURI, 'comics', e)} className="collection-item" key={comic.name}>{comic.name}</a>);
+                        return (<a href='!#' onClick={(e) => onGetData(comic.resourceURI, 'comics', e)} className="collection-item" key={comic.name}>{comic.name}</a>);
                     })}
                 </ul>
             </div>}
@@ -34,7 +33,7 @@ export const DetailedCard = ({character, onGetData}) => (
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Events</h4></li>
                     {character.events.items.map(event => {
-                        return (<a className="collection-item" key={event.name} href={event.resourceURI}>{event.name}</a>);
+                        return (<a href="!#" onClick={(e) => onGetData(event.resourceURI, 'events', e)} className="collection-item" key={event.name}>{event.name}</a>);
                     })}
                 </ul>
             </div>}
@@ -42,7 +41,7 @@ export const DetailedCard = ({character, onGetData}) => (
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Series</h4></li>
                     {character.series.items.map(series => {
-                        return (<a className="collection-item" key={series.name} href={series.resourceURI}>{series.name}</a>);
+                        return (<a href="!#" onClick={(e) => onGetData(series.resourceURI, 'series', e)} className="collection-item" key={series.name}>{series.name}</a>);
                     })}
                 </ul>
             </div>}
@@ -51,11 +50,11 @@ export const DetailedCard = ({character, onGetData}) => (
                     <li className="collection-header"><h4>Stories</h4></li>
                     {character.stories.items.map(story => {
                         return (
-                            <div  key={story.name + story.type} >
-                                <a  className="collection-item"href={story.resourceURI}>
+                            <div key={story.name + story.type} >
+                                <div className="collection-item">
                                     {story.name}
                                     <span  className="secondary-content">{story.type}</span>
-                                </a>
+                                </div>
                             </div>
                         );
                     })}
