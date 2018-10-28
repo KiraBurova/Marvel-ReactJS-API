@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/Marvel-ReactJS-API/precache-manifest.04ad15d1895acd7741d038dedae5c619.js"
+  "/Marvel-ReactJS-API/precache-manifest.f99a9ef3c5dd47b26f98e90cccc0671d.js"
 );
 
 workbox.clientsClaim();
