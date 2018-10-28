@@ -42,7 +42,7 @@ class Story extends Component {
 Story.propTypes = {
     fetchSingleItem: PropTypes.func.isRequired,
     fetchAdditionalData: PropTypes.func.isRequired,
-    story: PropTypes.object.isRequired,
+    story: PropTypes.object,
     url: PropTypes.string.isRequired
 };
 

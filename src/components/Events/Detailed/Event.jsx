@@ -42,7 +42,7 @@ class Event extends Component {
 Event.propTypes = {
     fetchSingleItem: PropTypes.func.isRequired,
     fetchAdditionalData: PropTypes.func.isRequired,
-    event: PropTypes.object.isRequired,
+    event: PropTypes.object,
     url: PropTypes.string.isRequired
 };
 

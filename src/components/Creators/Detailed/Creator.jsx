@@ -42,7 +42,7 @@ class Creator extends Component {
 Creator.propTypes = {
     fetchSingleItem: PropTypes.func.isRequired,
     fetchAdditionalData: PropTypes.func.isRequired,
-    creator: PropTypes.object.isRequired,
+    creator: PropTypes.object,
     url: PropTypes.string.isRequired
 };
 

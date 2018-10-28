@@ -45,7 +45,7 @@ class Comic extends Component {
 Comic.propTypes = {
     fetchSingleItem: PropTypes.func.isRequired,
     fetchAdditionalData: PropTypes.func.isRequired,
-    comic: PropTypes.object.isRequired,
+    comic: PropTypes.object,
     url: PropTypes.string.isRequired
 };
 

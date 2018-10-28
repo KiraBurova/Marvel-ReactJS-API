@@ -15,7 +15,7 @@ export const DetailedCard = ({series, onGetData}) => (
             {!!series.urls && !!series.urls.length && <div className="card-action">
                 <div className="series__actions">
                     {series.urls.map(url => {
-                        return <Button text={url.type} link={url.url} key={url.url}></Button>;
+                        return <Button text={url.type} link={url.url} key={url.url} external={true}></Button>;
                     })}
                 </div>
             </div>}

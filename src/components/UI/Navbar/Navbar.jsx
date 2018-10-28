@@ -13,5 +13,5 @@ export const Navbar = (props) => (
 );
 
 Navbar.propTypes = {
-    text: PropTypes.string.isRequired
+    text: PropTypes.string
 };

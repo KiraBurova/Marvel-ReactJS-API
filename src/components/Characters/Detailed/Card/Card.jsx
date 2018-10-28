@@ -48,9 +48,9 @@ export const DetailedCard = ({character, onGetData}) => (
             {!!character.stories.available && <div className="stories">
                 <ul className="collection with-header">
                     <li className="collection-header"><h4>Stories</h4></li>
-                    {character.stories.items.map(story => {
+                    {character.stories.items.map((story, i) => {
                         return (
-                            <div key={story.name + story.type} >
+                            <div key={story.name + story.type + i} >
                                 <div className="collection-item">
                                     {story.name}
                                     <span  className="secondary-content">{story.type}</span>

@@ -42,7 +42,7 @@ class Series extends Component {
 Series.propTypes = {
     fetchSingleItem: PropTypes.func.isRequired,
     fetchAdditionalData: PropTypes.func.isRequired,
-    series: PropTypes.object.isRequired,
+    series: PropTypes.object,
     url: PropTypes.string.isRequired
 };
 

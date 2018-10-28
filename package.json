@@ -17,7 +17,7 @@
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0"
   },
-  "homepage": "https://KiraBurova.github.io/Marvel-ReactJS-API/",
+  "homepage": "https://KiraBurova.github.io/Marvel-ReactJS-API",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
